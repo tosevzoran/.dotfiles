@@ -17,9 +17,10 @@ brew bundle --file ./Brewfile
 # rm -rf $HOME/.zshrc
 # ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
+# alacritty configs
 mkdir -p $HOME/.config/alacritty
 ln -sf $HOME/.dotfiles/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 ln -sf $HOME/.dotfiles/alacritty-catppuccin-frappe.toml $HOME/.config/alacritty/alacritty-catppuccin-frappe.toml
 
-
-
+# git configs
+ln -sf $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
