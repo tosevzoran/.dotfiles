@@ -1,6 +1,11 @@
+#!/bin/bash
+
 # Check for Oh My Zsh and install if we don't have it
 if test ! $(which omz); then
-  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+  rm -rf $HOME/.oh-my-zsh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  # /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 fi
 
 # Check for Homebrew and install if we don't have it
@@ -17,11 +22,15 @@ brew bundle --file ./Brewfile
 DOTFILES="$HOME/.dotfiles"
 CONFIG="$HOME/.config"
 
-# rm -rf $HOME/.zshrc
-# ln -sf $DOTFILES/.zshrc $HOME/.zshrc
+
+# zsh config
+rm $HOME/.zshrc
+ln -sf $DOTFILES/.zshrc $HOME/.zshrc
+ln -sf $DOTFILES/.p10k.zsh $HOME/.p10k.zsh
+exec zsh
 
 # git config
-ln -sf $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+ln -sf $DOTFILES/.gitconfig $HOME/.gitconfig
 
 # alacritty config
 mkdir -p $CONFIG/alacritty
