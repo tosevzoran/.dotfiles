@@ -3,6 +3,7 @@ brew 'tmux'
 brew 'gh'
 brew 'git'
 brew 'grep'
+brew 'neovim'
 
 cask 'alacritty'
 cask 'brave-browser'
