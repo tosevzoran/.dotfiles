@@ -14,13 +14,22 @@ fi
 brew update
 brew bundle --file ./Brewfile
 
+DOTFILES="$HOME/.dotfiles"
+CONFIG="$HOME/.config"
+
 # rm -rf $HOME/.zshrc
-# ln -sw $HOME/.dotfiles/.zshrc $HOME/.zshrc
+# ln -sf $DOTFILES/.zshrc $HOME/.zshrc
 
-# alacritty configs
-mkdir -p $HOME/.config/alacritty
-ln -sf $HOME/.dotfiles/alacritty.toml $HOME/.config/alacritty/alacritty.toml
-ln -sf $HOME/.dotfiles/alacritty-catppuccin-frappe.toml $HOME/.config/alacritty/alacritty-catppuccin-frappe.toml
-
-# git configs
+# git config
 ln -sf $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+
+# alacritty config
+mkdir -p $CONFIG/alacritty
+ln -sf $DOTFILES/alacritty.toml $CONFIG/alacritty/alacritty.toml
+ln -sf $DOTFILES/alacritty-catppuccin-frappe.toml $CONFIG/alacritty/alacritty-catppuccin-frappe.toml
+
+# tmux config
+rm -rf $CONFIG/tmux
+mkdir -p $CONFIG/tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm $CONFIG/tmux/plugins/tpm
+ln -sf $DOTFILES/tmux.conf $CONFIG/tmux/tmux.conf 
