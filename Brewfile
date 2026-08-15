@@ -7,6 +7,8 @@ brew 'ripgrep'
 brew 'fd'
 brew 'go'
 brew 'neovim'
+brew 'arduino-cli'
+brew 'tree-sitter-cli'
 
 cask 'alacritty'
 cask 'brave-browser'
