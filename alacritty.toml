@@ -2,9 +2,6 @@
 import = ["./alacritty-catppuccin-frappe.toml"]
 live_config_reload = true
 
-[env]
-TERM = "screen-256color"
-
 [font]
 size = 16
 
