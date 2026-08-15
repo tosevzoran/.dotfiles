@@ -9,6 +9,7 @@ brew 'go'
 brew 'neovim'
 brew 'arduino-cli'
 brew 'tree-sitter-cli'
+brew 'prettierd'
 
 cask 'alacritty'
 cask 'brave-browser'

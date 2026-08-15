@@ -19,6 +19,8 @@ fi
 
 bash -c "$(curl -fsSL https://sh.rustup.rs)"
 
+cargo install --locked tree-sitter-cli
+
 brew update
 brew bundle --file ./Brewfile
 
