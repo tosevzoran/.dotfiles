@@ -10,6 +10,7 @@ brew 'neovim'
 brew 'arduino-cli'
 brew 'tree-sitter-cli'
 brew 'prettierd'
+brew 'lua-language-server'
 
 cask 'alacritty'
 cask 'brave-browser'
