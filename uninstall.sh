@@ -4,6 +4,7 @@ set -e
 
 CONFIG="$HOME/.config"
 
+rm -rf "$HOME/Library/Android/sdk"
 rm -rf $CONFIG/nvim
 rm -rf $CONFIG/tmux
 rm -rf $CONFIG/alacritty
@@ -18,6 +19,8 @@ rm -rf ~/.cache/nvim
 if command -v nvm >/dev/null; then
   nvm_dir="${NVM_DIR:-~/.nvm}" && nvm unload && rm -rf "$nvm_dir"
 fi
+
+
 
 if command -v rustup >/dev/null; then
   rustup self uninstall

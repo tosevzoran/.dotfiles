@@ -12,6 +12,10 @@ brew 'tree-sitter-cli'
 brew 'prettierd'
 brew 'lua-language-server'
 
+tap 'android/tap'
+cask 'android-cli'
+
 cask 'alacritty'
 cask 'brave-browser'
 cask 'font-hack-nerd-font'
+cask 'zulu@17'

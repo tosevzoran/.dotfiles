@@ -56,3 +56,15 @@ ln -sf $DOTFILES/tmux.conf $CONFIG/tmux/tmux.conf
 # neovim config
 rm -rf $CONFIG/nvim
 ln -sf $DOTFILES/nvim $CONFIG/nvim
+
+# android SDK
+mkdir -p "$HOME/Library/Android/sdk"
+echo "--sdk=$HOME/Library/Android/sdk" > ~/.androidrc
+
+# compatible with Expo SDK 57 (might change later)
+android sdk install \
+  platform-tools \
+  platforms/android-36 \
+  build-tools/36.0.0 \
+  emulator
+
